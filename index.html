@@ -1,0 +1,1294 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Durgayini 🎂</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #ffe4ef, #eee5ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           OPENING SCREEN
+        ========================= */
+
+        #opening {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #ffb6d5, #cbbcff);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            z-index: 1000;
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+        }
+
+        .opening-content {
+            padding: 25px;
+        }
+
+        .opening-emoji {
+            font-size: 70px;
+            animation: bounce 2s infinite;
+        }
+
+        .opening-content h1 {
+            font-size: 2.4rem;
+            color: white;
+            margin: 15px 0;
+        }
+
+        .opening-content p {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .start-button {
+            border: none;
+            padding: 15px 32px;
+
+            border-radius: 50px;
+
+            background: white;
+            color: #ff5c9a;
+
+            font-size: 1rem;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.15);
+
+            transition: .3s;
+        }
+
+        .start-button:hover {
+            transform: scale(1.08);
+        }
+
+        .start-button:active {
+            transform: scale(.95);
+        }
+
+
+        /* =========================
+           MAIN WEBSITE
+        ========================= */
+
+        .main {
+            width: 100%;
+            max-width: 600px;
+
+            margin: auto;
+
+            padding:
+                40px 18px;
+        }
+
+        section {
+            background: rgba(255,255,255,.88);
+
+            border-radius: 25px;
+
+            padding:
+                30px 22px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,.08);
+
+            backdrop-filter: blur(10px);
+
+            animation:
+                appear 1s ease;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+            padding-top: 45px;
+        }
+
+        .cake {
+            font-size: 75px;
+
+            animation:
+                bounce 2s infinite;
+        }
+
+        .hero h1 {
+            color: #ff4f87;
+
+            font-size: 2.4rem;
+
+            margin:
+                15px 0 8px;
+        }
+
+        .hero p {
+            color: #777;
+
+            font-size: 1rem;
+        }
+
+
+        /* =========================
+           SECTION TITLES
+        ========================= */
+
+        .section-title {
+            text-align: center;
+
+            color: #ff4f87;
+
+            margin-bottom: 18px;
+
+            font-size: 1.5rem;
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .message {
+            line-height: 1.8;
+
+            text-align: center;
+
+            font-size: 1rem;
+        }
+
+        .highlight {
+            color: #ff4f87;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FUNNY SECTION
+        ========================= */
+
+        .funny {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3f8,
+                    #f5f1ff
+                );
+        }
+
+        .funny .big {
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+        }
+
+        .funny p {
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           REASON CARDS
+        ========================= */
+
+        .reason-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .reason-card {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f6,
+                    #f3efff
+                );
+
+            border-radius: 20px;
+
+            padding: 20px 12px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            border:
+                2px solid transparent;
+        }
+
+        .reason-card:hover {
+
+            transform:
+                translateY(-5px);
+        }
+
+        .reason-card:active {
+
+            transform:
+                scale(.96);
+        }
+
+        .reason-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 8px;
+        }
+
+        .reason-card h3 {
+
+            color: #ff4f87;
+
+            font-size: 1rem;
+
+            margin-bottom: 5px;
+        }
+
+        .reason-card > p {
+
+            font-size: .8rem;
+
+            color: #999;
+        }
+
+        .hidden-text {
+
+            display: none;
+
+            margin-top: 12px;
+
+            font-size: .85rem;
+
+            line-height: 1.5;
+
+            color: #555;
+        }
+
+        .reason-card.revealed
+        .hidden-text {
+
+            display: block;
+        }
+
+        .reason-card.revealed > p {
+
+            display: none;
+        }
+
+
+        /* =========================
+           SURPRISE BUTTON
+        ========================= */
+
+        .surprise-button {
+
+            display: block;
+
+            margin:
+                20px auto 0;
+
+            border: none;
+
+            padding:
+                15px 30px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4f87,
+                    #ff82b0
+                );
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 1rem;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(255,79,135,.3);
+
+            transition: .3s;
+        }
+
+        .surprise-button:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+        .surprise-button:active {
+
+            transform:
+                scale(.95);
+        }
+
+
+        /* =========================
+           FINAL SURPRISE
+        ========================= */
+
+        #surprise {
+
+            display: none;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            animation:
+                appear .8s ease;
+        }
+
+        #surprise h2 {
+
+            color: #ff4f87;
+
+            margin-bottom: 12px;
+        }
+
+        #surprise p {
+
+            line-height: 1.8;
+        }
+
+        .heart {
+
+            font-size: 38px;
+
+            margin-top: 15px;
+
+            animation:
+                heartbeat 1.2s infinite;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            color: #888;
+
+            font-size: .85rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -30px;
+
+            font-size: 20px;
+
+            pointer-events: none;
+
+            animation:
+                floatUp 5s linear forwards;
+
+            z-index: 50;
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+
+            position: fixed;
+
+            top: -20px;
+
+            width: 9px;
+            height: 9px;
+
+            pointer-events: none;
+
+            z-index: 999;
+
+            animation:
+                fall linear forwards;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px);
+            }
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+
+                transform:
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    scale(1.2);
+            }
+        }
+
+
+        @keyframes floatUp {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(30deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        @keyframes fall {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width:480px) {
+
+            .main {
+
+                padding:
+                    25px 12px;
+            }
+
+            section {
+
+                padding:
+                    25px 18px;
+            }
+
+            .opening-content h1 {
+
+                font-size:
+                    2rem;
+            }
+
+            .hero h1 {
+
+                font-size:
+                    2rem;
+            }
+
+            .cake {
+
+                font-size:
+                    65px;
+            }
+
+        }
+
+
+        @media (max-width:380px) {
+
+            .reason-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         OPENING SCREEN
+    ================================== -->
+
+    <div id="opening">
+
+        <div class="opening-content">
+
+            <div class="opening-emoji">
+                🎁
+            </div>
+
+            <h1>
+                Hey Durgayini 👀
+            </h1>
+
+            <p>
+
+                I made something for you...
+
+                <br>
+
+                Don't judge me okay? 😂
+
+            </p>
+
+            <button
+                class="start-button"
+                onclick="startWebsite()">
+
+                Open Your Birthday Surprise ✨
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MAIN WEBSITE
+    ================================== -->
+
+    <div class="main">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <h1>
+                Happy Birthday Durgayini! 🎉
+            </h1>
+
+            <p>
+                Today is officially your day ✨
+            </p>
+
+        </section>
+
+
+
+        <!-- BIRTHDAY MESSAGE -->
+
+        <section>
+
+            <h2 class="section-title">
+
+                💌 A Little Birthday Message
+
+            </h2>
+
+            <p class="message">
+
+                Hey Durgayini! 🫶
+
+                <br><br>
+
+                Happy Birthdayyy! 🎂✨
+
+                <br><br>
+
+                I hope today brings you lots of
+                happiness, laughter, good food,
+                and absolutely zero unnecessary
+                stress. 😂
+
+                <br><br>
+
+                You're genuinely someone who makes
+                things more fun just by being around.
+
+                <br><br>
+
+                So I hope this new year of your life
+                gives you plenty of beautiful memories,
+                unexpected happy moments, and
+                countless reasons to smile. ✨
+
+                <br><br>
+
+                You deserve a really good year. ❤️
+
+            </p>
+
+        </section>
+
+
+
+        <!-- FUNNY SECTION -->
+
+        <section class="funny">
+
+            <div class="big">
+
+                🚨 IMPORTANT ANNOUNCEMENT 🚨
+
+            </div>
+
+            <p>
+
+                Congratulations! 🎉
+
+                <br><br>
+
+                You have successfully survived
+                another year of life.
+
+                <br><br>
+
+                Unfortunately...
+
+                <br><br>
+
+                <strong>
+
+                    You are still stuck in KMJAIL with Me. 😭😂
+
+                </strong>
+
+                <br><br>
+
+                No refunds.
+
+                <br>
+
+                Sorry. 😂
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             THINGS ABOUT HER
+        ================================== -->
+
+        <section>
+
+            <h2 class="section-title">
+
+                🌸 A Few Things About You
+
+            </h2>
+
+            <p class="message">
+
+                Since I don't have enough photos
+                to expose you... 😂
+
+                <br>
+
+                I decided to make this instead.
+
+                <br><br>
+
+                Tap each one. 👀
+
+            </p>
+
+
+            <div class="reason-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div
+                    class="reason-card"
+                    onclick="reveal(this)">
+
+                    <div class="reason-icon">
+                        😂
+                    </div>
+
+                    <h3>
+                        Your Humour
+                    </h3>
+
+                    <p>
+                        Tap me 👀
+                    </p>
+
+                    <div class="hidden-text">
+
+                        You somehow make random
+                        conversations 10× funnier
+                        than they should be (Naa pesuna varaikum). 😂
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 2 -->
+
+                <div
+                    class="reason-card"
+                    onclick="reveal(this)">
+
+                    <div class="reason-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Your Vibe
+                    </h3>
+
+                    <p>
+                        Tap me 👀
+                    </p>
+
+                    <div class="hidden-text">
+
+                        You have that kind of energy
+                        that makes people enjoy
+                        having you around(Naa paatha varaikum).
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 3 -->
+
+                <div
+                    class="reason-card"
+                    onclick="reveal(this)">
+
+                    <div class="reason-icon">
+                        🫶
+                    </div>
+
+                    <h3>
+                        Your Personality
+                    </h3>
+
+                    <p>
+                        Tap me 👀
+                    </p>
+
+                    <div class="hidden-text">
+
+                        You're genuinely a really
+                        nice person if I'm not wrong scientifically, even if you
+                        probably won't admit it. 😂
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 4 -->
+
+                <div
+                    class="reason-card"
+                    onclick="reveal(this)">
+
+                    <div class="reason-icon">
+                        🌷
+                    </div>
+
+                    <h3>
+                        Just You
+                    </h3>
+
+                    <p>
+                        Tap me 👀
+                    </p>
+
+                    <div class="hidden-text">
+
+                        Honestly...
+
+                        <br><br>
+
+                        You're just someone I'm
+                        really glad I met. ❤️
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FINAL SURPRISE
+        ================================== -->
+
+        <section>
+
+            <h2 class="section-title">
+
+                🎁 One Last Thing...
+
+            </h2>
+
+            <p class="message">
+
+                Okay okay...
+
+                <br>
+
+                I saved one more thing for you. 👀
+
+            </p>
+
+
+            <button
+                class="surprise-button"
+                onclick="showSurprise()">
+
+                💗 Don't Click This
+
+            </button>
+
+
+
+            <div id="surprise">
+
+                <h2>
+
+                    You clicked it 😭
+
+                </h2>
+
+                <p>
+
+                    Since you already clicked...
+
+                    <br><br>
+
+                    I just want you to know that
+                    you're genuinely special to me. 🫶
+
+                    <br><br>
+
+                    I hope we get to make a lot more
+                    stupid, funny and unforgettable
+                    memories together.
+
+                    <br><br>
+
+                    And yes...
+
+                    <br><br>
+
+                    <strong>
+
+                        You deserve an amazing birthday. ❤️
+
+                    </strong>
+
+                </p>
+
+                <div class="heart">
+
+                    💗
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            Made with questionable amounts
+            of effort 😂💗
+
+            <br><br>
+
+            Happy Birthday, Durgayini! 🎂✨
+
+            <br><br>
+
+            <span>
+                — From someone who thinks
+                you're pretty awesome 👀 Kindly pls don't reply thanks broo or thanks anne kindly plss
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /* =========================
+           OPEN WEBSITE
+        ========================= */
+
+        function startWebsite() {
+
+            const opening =
+                document.getElementById("opening");
+
+            opening.style.opacity = "0";
+
+            opening.style.visibility =
+                "hidden";
+
+            createConfetti();
+
+            setInterval(
+                createHeart,
+                1200
+            );
+
+        }
+
+
+
+        /* =========================
+           REVEAL CARDS
+        ========================= */
+
+        function reveal(card) {
+
+            card.classList.toggle(
+                "revealed"
+            );
+
+            createHeart();
+
+        }
+
+
+
+        /* =========================
+           FINAL SURPRISE
+        ========================= */
+
+        function showSurprise() {
+
+            const surprise =
+                document.getElementById(
+                    "surprise"
+                );
+
+            surprise.style.display =
+                "block";
+
+            createConfetti();
+
+            surprise.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "center"
+
+            });
+
+        }
+
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        function createConfetti() {
+
+            const colors = [
+
+                "#ff4f87",
+                "#ffcc00",
+                "#8b7cff",
+                "#00c2ff",
+                "#7ed957",
+                "#ff7eb3"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 120;
+                i++
+            ) {
+
+                const confetti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confetti.className =
+                    "confetti";
+
+
+                confetti.style.left =
+                    Math.random() * 100
+                    + "vw";
+
+
+                confetti.style.backgroundColor =
+                    colors[
+                        Math.floor(
+                            Math.random()
+                            * colors.length
+                        )
+                    ];
+
+
+                confetti.style.width =
+                    Math.random() * 8
+                    + 5 + "px";
+
+
+                confetti.style.height =
+                    Math.random() * 8
+                    + 5 + "px";
+
+
+                confetti.style.animationDuration =
+                    Math.random() * 3
+                    + 2 + "s";
+
+
+                confetti.style.animationDelay =
+                    Math.random()
+                    * .5 + "s";
+
+
+                document.body.appendChild(
+                    confetti
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        confetti.remove();
+
+                    },
+                    6000
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "floating-heart";
+
+
+            const hearts = [
+
+                "💗",
+                "💖",
+                "💕",
+                "✨",
+                "🌸"
+
+            ];
+
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random()
+                        * hearts.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100
+                + "vw";
+
+
+            heart.style.fontSize =
+                Math.random() * 15
+                + 15 + "px";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                () => {
+
+                    heart.remove();
+
+                },
+                5000
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+```
+
